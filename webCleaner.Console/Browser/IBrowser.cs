@@ -1,4 +1,4 @@
-using webCleaner.Commands;
+using webCleaner.Options;
 
 namespace webCleaner.Browser
 {

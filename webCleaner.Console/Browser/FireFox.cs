@@ -1,6 +1,5 @@
-using System;
 using System.IO;
-using webCleaner.Commands;
+using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -88,9 +87,6 @@ namespace webCleaner.Browser
                 CloseProcess();
             switch (opt)
             {
-                case DeleteOption.All: 
-                    deleteAll(force);                   
-                    break;
                 case DeleteOption.Cookies:
                     deleteCookies(force);
                     break;

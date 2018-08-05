@@ -1,7 +1,5 @@
-using System;
 using System.Diagnostics;
-using System.IO;
-using webCleaner.Commands;
+using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -16,9 +14,6 @@ namespace webCleaner.Browser
             CloseProcess();
             switch (opt)
             {
-                case DeleteOption.All:
-                    Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 255").WaitForExit();
-                    break;
                 case DeleteOption.Cookies:
                     Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 2").WaitForExit();
                     break;

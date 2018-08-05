@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace webCleaner.Browser
+namespace webCleaner.Options
 {
-    public enum BrowserType {
+    public enum BrowserOptions {
         Chrome,
         FireFox,
         IE,
@@ -14,7 +14,7 @@ namespace webCleaner.Browser
     {
         public BrowserAttribute(): base()
         {
-            var validBrowser = String.Join(" or ", Enum.GetNames(typeof(BrowserType)));
+            var validBrowser = String.Join(" or ", Enum.GetNames(typeof(BrowserOptions)));
             ErrorMessage = $"The value for {{0}} must be {validBrowser}";
         }
 

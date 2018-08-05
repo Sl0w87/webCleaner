@@ -1,6 +1,5 @@
-using System.Diagnostics;
 using System.IO;
-using webCleaner.Commands;
+using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -22,10 +21,7 @@ namespace webCleaner.Browser
         {
             CloseProcess();
             switch (opt)
-            {
-                
-                case DeleteOption.All:                    
-                    break;
+            {                
                 case DeleteOption.Cookies:
                     DeleteFiles(Path.Combine(applicationData, "INetCookies"), "*");
                     DeleteFiles(Path.Combine(commonApplicationData, "INetCookies"), "*");

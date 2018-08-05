@@ -2,7 +2,7 @@ using System;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
-using webCleaner.Commands;
+using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -75,6 +75,6 @@ namespace webCleaner.Browser
             }
             return true;
         }        
-        public abstract void Delete(DeleteOption opt, bool force = false);
+        public abstract void Delete(DeleteOption opt, bool force = false);        
     }
 }

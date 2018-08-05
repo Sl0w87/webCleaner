@@ -67,14 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Browser\AbstractBrowser.cs" />
-    <Compile Include="Browser\BrowserType.cs" />
+    <Compile Include="Options\BrowserOptions.cs" />
     <Compile Include="Browser\Chrome.cs" />
     <Compile Include="Browser\Edge.cs" />
     <Compile Include="Browser\Factory.cs" />
     <Compile Include="Browser\FireFox.cs" />
     <Compile Include="Browser\IBrowser.cs" />
     <Compile Include="Browser\IE.cs" />
-    <Compile Include="Commands\DeleteOptions.cs" />
+    <Compile Include="Options\DeleteOptions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
