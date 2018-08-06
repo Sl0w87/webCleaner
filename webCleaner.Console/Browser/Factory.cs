@@ -5,17 +5,17 @@ namespace webCleaner.Browser
 {
     internal static class Factory
     {
-        public static IBrowser GetBrowser(BrowserOptions browser)
+        public static IBrowser GetBrowser(BrowserOption browser)
         {
             switch (browser)
             {
-                case BrowserOptions.Chrome:
+                case BrowserOption.Chrome:
                     return new Chrome();
-                case BrowserOptions.Edge: 
+                case BrowserOption.Edge: 
                     return new Edge();
-                case BrowserOptions.FireFox:
+                case BrowserOption.FireFox:
                     return new FireFox();
-                case BrowserOptions.IE: 
+                case BrowserOption.IE: 
                     return new IE();
                 default: 
                     throw new ArgumentOutOfRangeException("BrowserType not valid.");

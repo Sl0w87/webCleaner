@@ -1,5 +1,4 @@
 using System.IO;
-using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -16,44 +15,62 @@ namespace webCleaner.Browser
         public override string ProcessName()
         {
             return "firefox";
-        }
-
-        void deleteAll(bool force)
+        }        
+                
+        public override void deleteActiveLogins(bool force)
         {
-            deleteCookies(force);
             deleteFormData(force);
-            deleteHistory(force);
-            deletePasswords(force);
         }
 
-        void deleteCookies(bool force)
+        public override void deleteCache(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteDownloadHistory(bool force)
+        {
+            DeleteFiles(applicationData, "*handlers*");
+            DeleteFiles(commonApplicationData, "*handlers*");
+        }
+
+        public override void deleteTemporaryInternetFiles(bool force)
+        {
+            deleteCache(force);
+        }
+
+        public override void deleteCookies(bool force)
         {
             if (force)
             {
                 DeleteFiles(applicationData, "*Cookies*");
-                DeleteFiles(commonApplicationData, "*Cookies*");                    
+                DeleteFiles(commonApplicationData, "*Cookies*");
+                DeleteFiles(applicationData, "*webappsstore*");
+                DeleteFiles(commonApplicationData, "*webappsstore*");
             }
             else
             {
                 DeleteSqlData(Path.Combine(applicationData, "cookies.sqlite"), "moz_cookies");
                 DeleteSqlData(Path.Combine(commonApplicationData, "cookies.sqlite"), "moz_cookies");
+                DeleteSqlData(Path.Combine(applicationData, "webappsstore.sqlite"), "moz_webappsstore");
+                DeleteSqlData(Path.Combine(commonApplicationData, "webappsstore.sqlite"), "moz_webappsstore");
             }
         }
 
-        void deleteFormData(bool force)
+        public override void deleteFormData(bool force)
         {
             if (force)
             {
                 DeleteFiles(applicationData, "*formhistory*");
-                DeleteFiles(commonApplicationData, "*formhistory*");  
+                DeleteFiles(commonApplicationData, "*formhistory*");
             }
             else
             {
-
+                DeleteSqlData(Path.Combine(applicationData, "formhistory.sqlite"), "moz_formhistory");
+                DeleteSqlData(Path.Combine(commonApplicationData, "formhistory.sqlite"), "moz_formhistory");
             }
         }
 
-        void deleteHistory(bool force)
+        public override void deleteHistory(bool force)
         {
             if (force)
             {
@@ -62,46 +79,17 @@ namespace webCleaner.Browser
             }
             else
             {
-
+                DeleteSqlData(Path.Combine(applicationData, "places.sqlite"), "moz_historyvisits");
+                DeleteSqlData(Path.Combine(commonApplicationData, "places.sqlite"), "moz_historyvisits");
             }
         }
 
-        void deletePasswords(bool force)
+        public override void deletePasswords(bool force)
         {
-            if (force)
-            {
-                DeleteFiles(applicationData, "*key4*");
-                DeleteFiles(commonApplicationData, "*key4*");  
-                DeleteFiles(applicationData, "*logins*");
-                DeleteFiles(commonApplicationData, "*logins*"); 
-            }
-            else
-            {
-
-            }
-        }
-
-        public override void Delete(DeleteOption opt, bool force = false)
-        {
-            if (force)
-                CloseProcess();
-            switch (opt)
-            {
-                case DeleteOption.Cookies:
-                    deleteCookies(force);
-                    break;
-                case DeleteOption.FormData:    
-                    deleteFormData(force);               
-                    break;
-                case DeleteOption.History:
-                    deleteHistory(force);                
-                    break;                
-                case DeleteOption.Passwords:   
-                    deletePasswords(force);                 
-                    break;
-                default:
-                    break;
-            }
+            DeleteFiles(applicationData, "*key4*");
+            DeleteFiles(commonApplicationData, "*key4*");
+            DeleteFiles(applicationData, "*logins*");
+            DeleteFiles(commonApplicationData, "*logins*");            
         }
     }
 }

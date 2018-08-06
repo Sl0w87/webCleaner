@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -9,26 +8,45 @@ namespace webCleaner.Browser
         {
             return "MicrosoftEdge";
         }
-        public override void Delete(DeleteOption opt, bool force = false)
+        
+        public override void deleteActiveLogins(bool force)
         {
-            CloseProcess();
-            switch (opt)
-            {
-                case DeleteOption.Cookies:
-                    Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 2").WaitForExit();
-                    break;
-                case DeleteOption.FormData:
-                    Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 16").WaitForExit();
-                    break;
-                case DeleteOption.History:
-                    Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 1").WaitForExit();
-                    break;                
-                case DeleteOption.Passwords:
-                    Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 32").WaitForExit();
-                    break;
-                default:
-                    break;
-            }
+            deleteHistory(force);
+        }
+
+        public override void deleteCache(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteDownloadHistory(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteTemporaryInternetFiles(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 8").WaitForExit();
+        }
+
+        public override void deleteCookies(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 2").WaitForExit();
+        }
+
+        public override void deleteFormData(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 16").WaitForExit();
+        }
+
+        public override void deleteHistory(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 1").WaitForExit();
+        }
+
+        public override void deletePasswords(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 32").WaitForExit();
         }
     }
 }

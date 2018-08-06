@@ -1,5 +1,5 @@
+using System.Diagnostics;
 using System.IO;
-using webCleaner.Options;
 
 namespace webCleaner.Browser
 {
@@ -13,30 +13,51 @@ namespace webCleaner.Browser
             applicationData = Path.Combine(ApplicationData, path);
             commonApplicationData = Path.Combine(CommonApplicationData, path);  
         }
+
+        public override void deleteActiveLogins(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteCache(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteDownloadHistory(bool force)
+        {
+            deleteHistory(force);
+        }
+
+        public override void deleteTemporaryInternetFiles(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 8").WaitForExit();
+        }
+
+        public override void deleteCookies(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 2").WaitForExit();
+        }
+
+        public override void deleteFormData(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 16").WaitForExit();
+        }
+
+        public override void deleteHistory(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 1").WaitForExit();
+        }
+
+        public override void deletePasswords(bool force)
+        {
+            Process.Start("RundDll32.exe", "InetCpl.cpl,ClearMyTracksByProcess 32").WaitForExit();
+        }
+
         public override string ProcessName()
         {
             return "iexplore";
         }
-        public override void Delete(DeleteOption opt, bool force = false)
-        {
-            CloseProcess();
-            switch (opt)
-            {                
-                case DeleteOption.Cookies:
-                    DeleteFiles(Path.Combine(applicationData, "INetCookies"), "*");
-                    DeleteFiles(Path.Combine(commonApplicationData, "INetCookies"), "*");
-                    break;
-                case DeleteOption.FormData:                  
-                    break;
-                case DeleteOption.History:
-                    DeleteFiles(Path.Combine(applicationData, "History"), "*");
-                    DeleteFiles(Path.Combine(commonApplicationData, "History"), "*");            
-                    break;                
-                case DeleteOption.Passwords:                   
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
 }

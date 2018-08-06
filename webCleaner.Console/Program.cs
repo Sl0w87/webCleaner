@@ -7,7 +7,7 @@ namespace webCleaner
 {
     [Command(
         Name = "webCleaner",
-        ThrowOnUnexpectedArgument = false        
+        ThrowOnUnexpectedArgument = false
     )]
     [HelpOption]
     class Program
@@ -16,53 +16,40 @@ namespace webCleaner
 
         [Option(Description = "Defines the browser.")]
         [BrowserAttribute]
-        public string Browser { get; set; }
+        public (bool HasValue, BrowserOption option) Browser { get; set; }
         [Option(Description = "Defines what data to delete.")]
-        public string Data { get; set; }
-
-        private IBrowser getBrowser()
+        public (bool HaseValue, DeleteOption option) Data { get; set; }
+        
+        public int OnExecute(CommandLineApplication app, IConsole console)
         {
-            if (string.IsNullOrEmpty(Browser))
-                return null;
-            BrowserOptions browserOption;
-            if (!Enum.TryParse<BrowserOptions>(Browser, true, out browserOption))
-                return null; 
-            return Factory.GetBrowser(browserOption);
-        }
-
-        private DeleteOption getDeleteOption()
-        {
-            if (string.IsNullOrEmpty(Data))
-                return DeleteOption.Undefined;
-            DeleteOption deleteOption;
-            if (!Enum.TryParse<DeleteOption>(Browser, true, out deleteOption))
-                return DeleteOption.Undefined;
-            return deleteOption;
-        }
-
-        public int OnExecute(IConsole console)
-        {
-            var browser = getBrowser();
-            if (browser == null)
+            if (!Browser.HasValue && !Data.HaseValue)
             {
-                var validBrowser = String.Join(", ", Enum.GetNames(typeof(BrowserOptions)));
-                Console.Write($"No valid browser is set. Valid options [{validBrowser}]");                   
+                app.ShowHelp();
+                return 0;
+            }
+
+            app.HelpOption(inherited: true);
+            if (!Browser.HasValue)
+            {
+                var validBrowser = String.Join(", ", Enum.GetNames(typeof(BrowserOption)));
+                console.Error.Write($"No valid browser is set. Valid options [{validBrowser}]");
+                app.ShowHelp();
                 return 1;
             }
 
-            var option = getDeleteOption();
-            if (option == DeleteOption.Undefined)
+            if (!Data.HaseValue)
             {
                 var validOption = String.Join(", ", Enum.GetNames(typeof(DeleteOption)));
-                validOption.Remove(0);
-                Console.Write($"No valid data is set. Valid options [{validOption}]");
+                console.Write($"No valid data is set. Valid options [{validOption}]");
+                app.ShowHelp();
                 return 2;
             }
-              
-            console.WriteLine($"Clearing {Browser} data.");
-            browser.Delete(option);
-            
-            console.WriteLine($"Finished clearing {Browser} data.");
+
+            IBrowser browser = Factory.GetBrowser(Browser.option);
+            console.WriteLine($"Clearing {Browser.option} ({Data.option}).");
+            browser.Delete(Data.option);
+
+            console.WriteLine($"Finished clearing {Browser.option} ({Data.option}).");
             return 0;
         }
     }

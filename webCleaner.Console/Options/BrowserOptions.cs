@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace webCleaner.Options
 {
-    public enum BrowserOptions {
+    public enum BrowserOption {
         Chrome,
         FireFox,
         IE,
@@ -14,7 +14,7 @@ namespace webCleaner.Options
     {
         public BrowserAttribute(): base()
         {
-            var validBrowser = String.Join(" or ", Enum.GetNames(typeof(BrowserOptions)));
+            var validBrowser = String.Join(" or ", Enum.GetNames(typeof(BrowserOption)));
             ErrorMessage = $"The value for {{0}} must be {validBrowser}";
         }
 

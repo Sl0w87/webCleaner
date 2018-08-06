@@ -74,7 +74,46 @@ namespace webCleaner.Browser
                 return false;
             }
             return true;
-        }        
-        public abstract void Delete(DeleteOption opt, bool force = false);        
-    }
+        }
+
+        public void Delete(DeleteOption opt, bool force = false)
+        {
+            if (force)
+                CloseProcess();
+            switch (opt)
+            {
+                case DeleteOption.ActiveLogins:
+                    break;
+                case DeleteOption.Cache:
+                    break;
+                case DeleteOption.DownloadHistory:
+                    break;
+                case DeleteOption.TemporaryInternetFiles:
+                    break;
+                case DeleteOption.Cookies:
+                    deleteCookies(force);
+                    break;
+                case DeleteOption.FormData:
+                    deleteFormData(force);
+                    break;
+                case DeleteOption.History:
+                    deleteHistory(force);
+                    break;
+                case DeleteOption.Passwords:
+                    deletePasswords(force);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public abstract void deleteActiveLogins(bool force);
+        public abstract void deleteCache(bool force);
+        public abstract void deleteDownloadHistory(bool force);
+        public abstract void deleteTemporaryInternetFiles(bool force);
+        public abstract void deleteCookies(bool force);
+        public abstract void deleteFormData(bool force);
+        public abstract void deleteHistory(bool force);
+        public abstract void deletePasswords(bool force);
+    }      
 }
