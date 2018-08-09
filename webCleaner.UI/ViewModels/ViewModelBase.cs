@@ -1,5 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Threading;
+using System.Windows;
 using webCleaner.Mvvm;
+using webCleaner.Properties;
 
 namespace webCleaner.ViewModels
 {
@@ -10,7 +15,7 @@ namespace webCleaner.ViewModels
 
         public ViewModelBase()
         {
-        }
+        }        
 
         public ObservableCollection<MenuItem> Menu => AppMenu;
 

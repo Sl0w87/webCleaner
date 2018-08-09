@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:webCleaner.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="webCleaner">
+      Title="{DynamicResource LabelAppName}">
 
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Top"
@@ -15,7 +15,7 @@
         <TextBlock Margin="24"
                    HorizontalAlignment="Center"
                    FontSize="48"
-                   Text="webCleaner" />
+                   Text="{DynamicResource LabelAppName}" />
         <iconPacks:PackIconMaterial Width="128"
                                     Height="128"
                                     HorizontalAlignment="Center"
