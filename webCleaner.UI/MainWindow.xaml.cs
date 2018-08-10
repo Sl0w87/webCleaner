@@ -16,8 +16,8 @@ namespace webCleaner.UI
     {
         public MainWindow()
         {
-            InitializeComponent();
             SetLanguageDictionary();
+            InitializeComponent();
             Navigation.Navigation.Frame = new Frame() { NavigationUIVisibility = NavigationUIVisibility.Hidden };
             Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
 
@@ -28,8 +28,8 @@ namespace webCleaner.UI
 
         private void SetLanguageDictionary()
         {
-            ResourceDictionary dict = new ResourceDictionary();
-            switch (Thread.CurrentThread.CurrentCulture.ToString())
+            ResourceDictionary dict = new ResourceDictionary();            
+            switch (Properties.Settings.Default.Culture)
             {
                 case "de-DE":
                     dict.Source = new Uri("..\\Resources\\Strings.de-DE.xaml",

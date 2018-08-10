@@ -3,6 +3,7 @@
                     xmlns:local="clr-namespace:webCleaner.Resources"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="LabelAppName">webWasher</system:String>
+    <system:String x:Key="LabelCulture">Sprache</system:String>
     <system:String x:Key="LabelDeveloper">von Adam Beck &amp; Lars Georgi</system:String>
     <system:String x:Key="LabelThirdPartyFrameworks">Diese Anwendung nutzt folgende Drittanbieter Software:</system:String>
     

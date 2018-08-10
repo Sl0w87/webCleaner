@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using MahApps.Metro.IconPacks;
+using webCleaner.Properties;
 
 namespace webCleaner.ViewModels
 {
@@ -9,11 +10,13 @@ namespace webCleaner.ViewModels
         public ShellViewModel()
         {
             // Build the menus
-            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InternetExplorerBrands }, Text = "Internet Explorer", NavigationDestination = new Uri("Views/IEPage.xaml", UriKind.RelativeOrAbsolute) });
-            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.EdgeBrands }, Text = "Edge", NavigationDestination = new Uri("Views/EdgePage.xaml", UriKind.RelativeOrAbsolute) });
-            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.ChromeBrands }, Text = "Chrome", NavigationDestination = new Uri("Views/ChromePage.xaml", UriKind.RelativeOrAbsolute) });
-            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.FirefoxBrands }, Text = "Firefox", NavigationDestination = new Uri("Views/FirefoxPage.xaml", UriKind.RelativeOrAbsolute) });
+            
+            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InternetExplorerBrands }, Text = "Microsoft Internet Explorer", NavigationDestination = new Uri("Views/IEPage.xaml", UriKind.RelativeOrAbsolute) });
+            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.EdgeBrands }, Text = "Microsoft Edge", NavigationDestination = new Uri("Views/EdgePage.xaml", UriKind.RelativeOrAbsolute) });
+            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.ChromeBrands }, Text = "Google Chrome", NavigationDestination = new Uri("Views/ChromePage.xaml", UriKind.RelativeOrAbsolute) });
+            this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.FirefoxBrands }, Text = "Mozilla Firefox", NavigationDestination = new Uri("Views/FirefoxPage.xaml", UriKind.RelativeOrAbsolute) });
 
+            this.OptionsMenu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CogSolid }, Text = "Settings", NavigationDestination = new Uri("Views/ConfigurationPage.xaml", UriKind.RelativeOrAbsolute) });
             this.OptionsMenu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InfoCircleSolid }, Text = "About", NavigationDestination = new Uri("Views/AboutPage.xaml", UriKind.RelativeOrAbsolute) });
         }
 
