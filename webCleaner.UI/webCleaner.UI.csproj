@@ -68,7 +68,7 @@
     <Compile Include="Mvvm\DelegateCommand.cs" />
     <Compile Include="Navigation\Navigation.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\AppConfigurationViewModel.cs" />
     <Compile Include="ViewModels\MenuItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -78,8 +78,8 @@
     <Compile Include="Views\ChromePage.xaml.cs">
       <DependentUpon>ChromePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ConfigurationPage.xaml.cs">
-      <DependentUpon>ConfigurationPage.xaml</DependentUpon>
+    <Compile Include="Views\AppConfigurationPage.xaml.cs">
+      <DependentUpon>AppConfigurationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EdgePage.xaml.cs">
       <DependentUpon>EdgePage.xaml</DependentUpon>
@@ -121,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ConfigurationPage.xaml">
+    <Page Include="Views\AppConfigurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

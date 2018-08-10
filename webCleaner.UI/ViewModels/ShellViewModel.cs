@@ -1,7 +1,6 @@
-﻿using System;
+﻿using MahApps.Metro.IconPacks;
+using System;
 using System.Linq;
-using MahApps.Metro.IconPacks;
-using webCleaner.Properties;
 
 namespace webCleaner.ViewModels
 {
@@ -16,7 +15,7 @@ namespace webCleaner.ViewModels
             this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.ChromeBrands }, Text = "Google Chrome", NavigationDestination = new Uri("Views/ChromePage.xaml", UriKind.RelativeOrAbsolute) });
             this.Menu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.FirefoxBrands }, Text = "Mozilla Firefox", NavigationDestination = new Uri("Views/FirefoxPage.xaml", UriKind.RelativeOrAbsolute) });
 
-            this.OptionsMenu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CogSolid }, Text = "Settings", NavigationDestination = new Uri("Views/ConfigurationPage.xaml", UriKind.RelativeOrAbsolute) });
+            this.OptionsMenu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CogSolid }, Text = "Settings", NavigationDestination = new Uri("Views/AppConfigurationPage.xaml", UriKind.RelativeOrAbsolute) });
             this.OptionsMenu.Add(new MenuItem() { Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InfoCircleSolid }, Text = "About", NavigationDestination = new Uri("Views/AboutPage.xaml", UriKind.RelativeOrAbsolute) });
         }
 

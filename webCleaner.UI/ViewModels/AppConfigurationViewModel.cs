@@ -5,7 +5,7 @@ using webCleaner.Mvvm;
 
 namespace webCleaner.ViewModels
 {
-    internal class ConfigurationViewModel: BindableBase
+    internal class AppConfigurationViewModel: BindableBase
     {    
 
         public int SelectedCultureIndex

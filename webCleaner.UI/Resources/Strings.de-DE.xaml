@@ -4,6 +4,14 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="LabelAppName">webWasher</system:String>
     <system:String x:Key="LabelCulture">Sprache</system:String>
+    <system:String x:Key="LabelCookies">Cookies</system:String>
+    <system:String x:Key="LabelCache">Cache</system:String>
+    <system:String x:Key="LabelTemporaryInternetFiles">Temporäre Internet Dateien</system:String>
+    <system:String x:Key="LabelHistory">Historie</system:String>
+    <system:String x:Key="LabelDownloadHistory">Download Historie</system:String>
+    <system:String x:Key="LabelFormData">Formular Daten</system:String>
+    <system:String x:Key="LabelPasswords">Passwörter</system:String>
+    <system:String x:Key="LabelActiveLogins">Aktive Logins</system:String>
     <system:String x:Key="LabelDeveloper">von Adam Beck &amp; Lars Georgi</system:String>
     <system:String x:Key="LabelThirdPartyFrameworks">Diese Anwendung nutzt folgende Drittanbieter Software:</system:String>
     

@@ -15,7 +15,8 @@ namespace webCleaner.ViewModels
 
         public ViewModelBase()
         {
-        }        
+        }
+
 
         public ObservableCollection<MenuItem> Menu => AppMenu;
 

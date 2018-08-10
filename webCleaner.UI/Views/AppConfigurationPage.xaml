@@ -11,7 +11,7 @@
       Title="ConfigurationPage">
 
     <Page.DataContext>
-        <viewModels:ConfigurationViewModel />
+        <viewModels:AppConfigurationViewModel />
     </Page.DataContext>
     
     <StackPanel 
