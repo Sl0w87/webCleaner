@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace webCleaner.Views
+namespace webCleaner.Controls
 {
     /// <summary>
-    /// Interaktionslogik für ConfigurationPage.xaml
+    /// Interaktionslogik für CultureUserControl.xaml
     /// </summary>
-    public partial class ConfigurationPage : Page
+    public partial class CultureUserControl : UserControl
     {
-        public ConfigurationPage()
+        public CultureUserControl()
         {
             InitializeComponent();
         }

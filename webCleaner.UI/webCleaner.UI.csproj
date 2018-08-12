@@ -64,11 +64,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\CultureUserControl.xaml.cs">
+      <DependentUpon>CultureUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\DelegateCommand.cs" />
     <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Services\CultureService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\AppConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\MenuItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -77,9 +81,6 @@
     </Compile>
     <Compile Include="Views\ChromePage.xaml.cs">
       <DependentUpon>ChromePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AppConfigurationPage.xaml.cs">
-      <DependentUpon>AppConfigurationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EdgePage.xaml.cs">
       <DependentUpon>EdgePage.xaml</DependentUpon>
@@ -93,6 +94,10 @@
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\CultureUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,10 +123,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ChromePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AppConfigurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

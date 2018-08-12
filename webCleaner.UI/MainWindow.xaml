@@ -5,6 +5,7 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:viewModels="clr-namespace:webCleaner.ViewModels"
+                      xmlns:userControls="clr-namespace:webCleaner.Controls"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       mc:Ignorable="d"
                       Title="{DynamicResource LabelAppName}"
@@ -25,6 +26,12 @@
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.LeftWindowCommands>
+
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <userControls:CultureUserControl />
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
 
     <Grid>
 
@@ -48,7 +55,6 @@
                                Text="{Binding Text}" />
                 </Grid>
             </DataTemplate>
-
         </Grid.Resources>
 
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"

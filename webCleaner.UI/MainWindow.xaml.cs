@@ -1,9 +1,9 @@
 ﻿using MahApps.Metro.Controls;
 using System;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using webCleaner.Services;
 using webCleaner.ViewModels;
 using MenuItem = webCleaner.ViewModels.MenuItem;
 
@@ -16,33 +16,15 @@ namespace webCleaner.UI
     {
         public MainWindow()
         {
-            SetLanguageDictionary();
             InitializeComponent();
+            CultureService.LoadCulture();
             Navigation.Navigation.Frame = new Frame() { NavigationUIVisibility = NavigationUIVisibility.Hidden };
             Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
-
+         
             // Navigate to the home page.
             this.Loaded += (sender, args) => Navigation.Navigation.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
         }
-
-
-        private void SetLanguageDictionary()
-        {
-            ResourceDictionary dict = new ResourceDictionary();            
-            switch (Properties.Settings.Default.Culture)
-            {
-                case "de-DE":
-                    dict.Source = new Uri("..\\Resources\\Strings.de-DE.xaml",
-                                  UriKind.Relative);
-                    break;
-                default:
-                    dict.Source = new Uri("..\\Resources\\Strings.xaml",
-                                      UriKind.Relative);
-                    break;
-            }
-            this.Resources.MergedDictionaries.Add(dict);
-        }
-
+        
         private void SplitViewFrame_OnNavigated(object sender, NavigationEventArgs e)
         {
             this.HamburgerMenuControl.Content = e.Content;

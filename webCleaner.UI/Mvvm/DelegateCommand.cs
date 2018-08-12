@@ -7,7 +7,7 @@ namespace webCleaner.Mvvm
 {
     internal class DelegateCommand : ICommand
     {
-        private readonly Action _execute;
+        private readonly Action<object> _execute;
 
         private readonly Func<bool> _canExecute;
 
@@ -17,7 +17,7 @@ namespace webCleaner.Mvvm
         /// </summary>
         /// <param name="execute">The execution logic.</param>
         /// <exception cref="ArgumentNullException">If the execute argument is null.</exception>
-        public DelegateCommand(Action execute)
+        public DelegateCommand(Action<object> execute)
             : this(execute, null)
         {
         }
@@ -28,7 +28,7 @@ namespace webCleaner.Mvvm
         /// <param name="execute">The execution logic.</param>
         /// <param name="canExecute">The execution status logic.</param>
         /// <exception cref="ArgumentNullException">If the execute argument is null.</exception>
-        public DelegateCommand(Action execute, Func<bool> canExecute)
+        public DelegateCommand(Action<object> execute, Func<bool> canExecute)
         {
             if (execute == null)
             {
@@ -72,7 +72,7 @@ namespace webCleaner.Mvvm
         {
             if (this.CanExecute(parameter))
             {
-                this._execute();
+                this._execute(parameter);
             }
         }
     }
