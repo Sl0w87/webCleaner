@@ -14,6 +14,8 @@
     <system:String x:Key="LabelActiveLogins">Active Logins</system:String>
     <system:String x:Key="LabelDeveloper">by Adam Beck &amp; Lars Georgi</system:String>
     <system:String x:Key="LabelThirdPartyFrameworks">This application uses the following third party frameworks:</system:String>
+    <system:String x:Key="LabelYes">Yes</system:String>
+    <system:String x:Key="LabelNo">No</system:String>
 
 
 </ResourceDictionary> 

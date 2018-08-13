@@ -14,5 +14,7 @@
     <system:String x:Key="LabelActiveLogins">Aktive Logins</system:String>
     <system:String x:Key="LabelDeveloper">von Adam Beck &amp; Lars Georgi</system:String>
     <system:String x:Key="LabelThirdPartyFrameworks">Diese Anwendung nutzt folgende Drittanbieter Software:</system:String>
+    <system:String x:Key="LabelYes">Ja</system:String>
+    <system:String x:Key="LabelNo">Nein</system:String>
     
 </ResourceDictionary>
