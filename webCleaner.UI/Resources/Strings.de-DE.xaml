@@ -16,5 +16,6 @@
     <system:String x:Key="LabelThirdPartyFrameworks">Diese Anwendung nutzt folgende Drittanbieter Software:</system:String>
     <system:String x:Key="LabelYes">Ja</system:String>
     <system:String x:Key="LabelNo">Nein</system:String>
+    <system:String x:Key="LabelTemporaryInternetFilesDescription">Temporary Internet Files is a folder on Microsoft Windows which serves as the browser cache for Internet Explorer to cache pages and other multimedia content, such as video and audio files, from websites visited by the user. This allows such websites to load more quickly the next time they are visited.</system:String>
     
 </ResourceDictionary>
