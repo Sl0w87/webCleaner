@@ -12,14 +12,14 @@
     <Grid>
         <iconPacks:PackIconFontAwesome Width="48"
                                     Height="48"
-                                    Margin="10"
+                                    Margin="0,10,25,10"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Top"
                                     Foreground="{DynamicResource AccentBaseColorBrush}"
                                     Kind="FirefoxBrands" />
-        <ScrollViewer VerticalScrollBarVisibility="Visible" 
-                      HorizontalScrollBarVisibility="Disabled" Name="sv1">
-            <userControls:CollapseConfigUserControl />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Auto">
+            <userControls:ConfigUserControl />
         </ScrollViewer>
     </Grid>
 </Page>
