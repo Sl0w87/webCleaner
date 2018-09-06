@@ -1,15 +1,21 @@
+using System.ComponentModel;
+
 namespace webCleaner.Options
 {
     public enum DeleteOption
     {
-        TemporaryInternetFiles,
-        Cookies,
-        History,
-        DownloadHistory,
-        FormData,
-        Passwords,
+        [Description("Cache")]
         Cache,
-        ActiveLogins
+        [Description("Cookies")]
+        Cookies,
+        [Description("History")]
+        History,
+        [Description("Downloads")]
+        Downloads,
+        [Description("Passwords")]
+        Passwords,
+        [Description("Form Data")]
+        FormData
     }
 }
 

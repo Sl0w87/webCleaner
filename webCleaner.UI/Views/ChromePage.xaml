@@ -5,9 +5,15 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:userControls="clr-namespace:webCleaner.Controls"
+      xmlns:viewModels="clr-namespace:webCleaner.ViewModels"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Chrome">
+
+    <Page.DataContext>
+        <viewModels:ChromeConfigurationViewModel/>
+    </Page.DataContext>
+    
     <Grid>
 
         <iconPacks:PackIconFontAwesome Width="48"
@@ -19,7 +25,7 @@
                                     Kind="ChromeBrands" />
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
                       HorizontalScrollBarVisibility="Auto">
-            <userControls:ConfigUserControl />
+            <userControls:ConfigUserControl Active="{Binding Active}"/>
         </ScrollViewer>
     </Grid>
 </Page>

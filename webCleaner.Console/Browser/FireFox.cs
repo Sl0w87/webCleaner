@@ -15,27 +15,17 @@ namespace webCleaner.Browser
         public override string ProcessName()
         {
             return "firefox";
-        }        
-                
-        public override void deleteActiveLogins(bool force)
-        {
-            deleteFormData(force);
-        }
+        }                              
 
         public override void deleteCache(bool force)
         {
             deleteHistory(force);
         }
 
-        public override void deleteDownloadHistory(bool force)
+        public override void deleteDownloads(bool force)
         {
             DeleteFiles(applicationData, "*handlers*");
             DeleteFiles(commonApplicationData, "*handlers*");
-        }
-
-        public override void deleteTemporaryInternetFiles(bool force)
-        {
-            deleteCache(force);
         }
 
         public override void deleteCookies(bool force)

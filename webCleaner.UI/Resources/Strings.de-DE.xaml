@@ -4,6 +4,7 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="LabelAppName">webWasher</system:String>
     <system:String x:Key="LabelCulture">Sprache</system:String>
+    <system:String x:Key="LabelActive">Aktiv</system:String>
     <system:String x:Key="LabelCookies">Cookies</system:String>
     <system:String x:Key="LabelCache">Cache</system:String>
     <system:String x:Key="LabelTemporaryInternetFiles">Temporäre Internet Dateien</system:String>

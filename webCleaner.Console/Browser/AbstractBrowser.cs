@@ -82,16 +82,14 @@ namespace webCleaner.Browser
                 CloseProcess();
             switch (opt)
             {
-                case DeleteOption.ActiveLogins:
-                    break;
                 case DeleteOption.Cache:
-                    break;
-                case DeleteOption.DownloadHistory:
-                    break;
-                case DeleteOption.TemporaryInternetFiles:
+                    deleteCache(force);
                     break;
                 case DeleteOption.Cookies:
                     deleteCookies(force);
+                    break;
+                case DeleteOption.Downloads:
+                    deleteDownloads(force);
                     break;
                 case DeleteOption.FormData:
                     deleteFormData(force);
@@ -106,11 +104,9 @@ namespace webCleaner.Browser
                     break;
             }
         }
-
-        public abstract void deleteActiveLogins(bool force);
+        
         public abstract void deleteCache(bool force);
-        public abstract void deleteDownloadHistory(bool force);
-        public abstract void deleteTemporaryInternetFiles(bool force);
+        public abstract void deleteDownloads(bool force);
         public abstract void deleteCookies(bool force);
         public abstract void deleteFormData(bool force);
         public abstract void deleteHistory(bool force);

@@ -34,7 +34,6 @@
     </controls:MetroWindow.RightWindowCommands>
 
     <Grid>
-
         <Grid.Resources>
 
             <DataTemplate x:Key="MenuItemTemplate"

@@ -72,11 +72,18 @@
     <Compile Include="Controls\CultureUserControl.xaml.cs">
       <DependentUpon>CultureUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChromeConfigruationModel.cs" />
+    <Compile Include="Models\AbstractConfigurationModel.cs" />
+    <Compile Include="Models\EdgeConfigurationModel.cs" />
+    <Compile Include="Models\FirefoxConfigurationModel.cs" />
+    <Compile Include="Models\InternetExplorerConfigurationModel.cs" />
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\DelegateCommand.cs" />
     <Compile Include="Navigation\Navigation.cs" />
     <Compile Include="Services\CultureService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\AbstractConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\ChromeConfigurationViewModel.cs" />
     <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\MenuItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />

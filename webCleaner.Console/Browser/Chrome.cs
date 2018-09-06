@@ -13,20 +13,6 @@ namespace webCleaner.Browser
             commonApplicationData = Path.Combine(CommonApplicationData, path);
         }
 
-        public override void deleteActiveLogins(bool force)
-        {
-            if (force)
-            {
-                DeleteFiles(applicationData, "*Login Data*");
-                DeleteFiles(commonApplicationData, "*Login Data*");
-            }
-            else
-            {
-                DeleteSqlData(Path.Combine(applicationData, "Login Data"), "logins");
-                DeleteSqlData(Path.Combine(commonApplicationData, "Login Data"), "logins");
-            }
-        }
-
         public override void deleteCache(bool force)
         {
             DeleteFiles(applicationData, "*Cache*");
@@ -53,10 +39,25 @@ namespace webCleaner.Browser
             }            
         }
 
-        public override void deleteDownloadHistory(bool force)
+        public override void deleteDownloads(bool force)
         {
             DeleteSqlData(Path.Combine(applicationData, "History"), "downloads");
-            DeleteSqlData(Path.Combine(commonApplicationData, "History"), "downloads");                            
+            DeleteSqlData(Path.Combine(commonApplicationData, "History"), "downloads");
+        }
+
+        public override void deletePasswords(bool force)
+        {
+
+            if (force)
+            {
+                DeleteFiles(applicationData, "*Login Data*");
+                DeleteFiles(commonApplicationData, "*Login Data*");
+            }
+            else
+            {
+                DeleteSqlData(Path.Combine(applicationData, "Login Data"), "logins");
+                DeleteSqlData(Path.Combine(commonApplicationData, "Login Data"), "logins");
+            }
         }
 
         public override void deleteFormData(bool force)
@@ -116,17 +117,7 @@ namespace webCleaner.Browser
                 DeleteSqlData(Path.Combine(commonApplicationData, "History"), "visit_source");
             }
         }
-
-        public override void deletePasswords(bool force)
-        {
-            deleteActiveLogins(force);
-        }
-
-        public override void deleteTemporaryInternetFiles(bool force)
-        {
-            deleteCache(force);
-        }
-
+        
         public override string ProcessName()
         {
             return "chrome";
