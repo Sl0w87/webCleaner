@@ -30,7 +30,7 @@
                     Margin="25">
             <controls:ToggleSwitch Header="{DynamicResource LabelActive}"
                                Style="{StaticResource ToggleSwitchStyle}"
-                               IsChecked="{Binding Active}"/>
+                               IsChecked="{Binding IsActive}"/>
         </StackPanel>
 
         <StackPanel Orientation="Vertical"
@@ -39,15 +39,13 @@
                     Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelCache}"
-                                   Style="{StaticResource ToggleSwitchStyle}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <controls:ToggleSwitch Header="{DynamicResource LabelCache}"
-                                   Style="{StaticResource ToggleSwitchStyle}"/>
+                                       Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding Cache}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelCookies}"
-                                   Style="{StaticResource ToggleSwitchStyle}"/>
+                                       Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding Cookies}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelDownloadHistory}"
@@ -69,10 +67,6 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelPasswords}"
-                                       Style="{StaticResource ToggleSwitchStyle}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <controls:ToggleSwitch Header="{DynamicResource LabelTemporaryInternetFiles}"
                                        Style="{StaticResource ToggleSwitchStyle}"/>
             </StackPanel>
         </StackPanel>

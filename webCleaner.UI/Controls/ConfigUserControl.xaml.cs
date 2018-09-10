@@ -13,11 +13,25 @@ namespace webCleaner.Controls
             InitializeComponent();
         }
 
-        public bool Active
+        public bool IsActive
         {
-            get { return (bool)GetValue(ActiveProperty); }
-            set { SetValue(ActiveProperty, value); }
+            get { return (bool)GetValue(IsActiveProperty); }
+            set { SetValue(IsActiveProperty, value); }
         }
-        public static readonly DependencyProperty ActiveProperty = DependencyProperty.Register("Active", typeof(bool), typeof(ConfigUserControl), null);
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register("IsActive", typeof(bool), typeof(ConfigUserControl), null);
+
+        public bool Cache
+        {
+            get { return (bool)GetValue(CacheProperty); }
+            set { SetValue(CacheProperty, value); }
+        }
+        public static readonly DependencyProperty CacheProperty = DependencyProperty.Register("Cache", typeof(bool), typeof(ConfigUserControl), null);
+
+        public bool Cookies
+        {
+            get { return (bool)GetValue(CookiesProperty); }
+            set { SetValue(CookiesProperty, value); }
+        }
+        public static readonly DependencyProperty CookiesProperty = DependencyProperty.Register("Cookies", typeof(bool), typeof(ConfigUserControl), null);
     }
 }

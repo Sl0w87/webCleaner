@@ -96,18 +96,14 @@
     <Compile Include="Controls\CultureUserControl.xaml.cs">
       <DependentUpon>CultureUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChromeConfigruationModel.cs" />
-    <Compile Include="Models\AbstractConfigurationModel.cs" />
-    <Compile Include="Models\EdgeConfigurationModel.cs" />
-    <Compile Include="Models\FirefoxConfigurationModel.cs" />
-    <Compile Include="Models\InternetExplorerConfigurationModel.cs" />
+    <Compile Include="Models\ConfigurationModel.cs" />
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\DelegateCommand.cs" />
     <Compile Include="Mvvm\ViewModelLocator.cs" />
     <Compile Include="Navigation\Navigation.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
     <Compile Include="Services\CultureService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\AbstractConfigurationViewModel.cs" />
     <Compile Include="ViewModels\ChromeConfigurationViewModel.cs" />
     <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\MenuItem.cs" />
@@ -208,6 +204,12 @@
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\webCleaner.Console\webCleaner.Console.csproj">
+      <Project>{90224b9d-9854-49f4-9aad-f404fb59bd6b}</Project>
+      <Name>webCleaner.Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

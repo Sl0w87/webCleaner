@@ -1,6 +1,6 @@
 ﻿namespace webCleaner.Models
 {
-    internal abstract class AbstractConfigurationModel
+    public class ConfigurationModel
     {
         public bool Active { get; set; }        
         public bool TemporaryInternetFiles { get; set; }
@@ -12,7 +12,7 @@
         public bool Cache { get; set; }
         public bool ActiveLogins { get; set; }
 
-        public AbstractConfigurationModel()
+        public ConfigurationModel()
         {
             Active = true;
             TemporaryInternetFiles = true;

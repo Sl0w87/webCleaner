@@ -12,8 +12,10 @@ namespace webCleaner.Mvvm
         {
             _container = new UnityContainer();
             _container.RegisterType<ICultureService, CultureService>();
+            _container.RegisterType<IConfigurationService, ConfigurationService>();
             _container.RegisterType<INotifyPropertyChanged, AboutViewModel>();
             _container.RegisterType<INotifyPropertyChanged, CultureViewModel>();
+            _container.RegisterType<INotifyPropertyChanged, ChromeConfigurationViewModel>();
         }
 
         public AboutViewModel About
@@ -24,6 +26,11 @@ namespace webCleaner.Mvvm
         public CultureViewModel Culture
         {
             get { return _container.Resolve<CultureViewModel>(); }
+        }
+
+        public ChromeConfigurationViewModel ChromeConfig
+        {
+            get { return _container.Resolve<ChromeConfigurationViewModel>(); }
         }
     }
 }

@@ -7,12 +7,10 @@
     <system:String x:Key="LabelActive">Active</system:String>
     <system:String x:Key="LabelCookies">Cookies</system:String>
     <system:String x:Key="LabelCache">Cache</system:String>
-    <system:String x:Key="LabelTemporaryInternetFiles">Temporary Internet Files</system:String>
     <system:String x:Key="LabelHistory">History</system:String>
-    <system:String x:Key="LabelDownloadHistory">Download History</system:String>
+    <system:String x:Key="LabelDownloadHistory">Downloads</system:String>
     <system:String x:Key="LabelFormData">Form Data</system:String>
     <system:String x:Key="LabelPasswords">Passwords</system:String>
-    <system:String x:Key="LabelActiveLogins">Active Logins</system:String>
     <system:String x:Key="LabelDeveloper">by Adam Beck &amp; Lars Georgi</system:String>
     <system:String x:Key="LabelThirdPartyFrameworks">This application uses the following third party frameworks:</system:String>
     <system:String x:Key="LabelYes">Yes</system:String>
