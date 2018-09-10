@@ -3,7 +3,7 @@ using webCleaner.Mvvm;
 
 namespace webCleaner.ViewModels
 {
-    internal class AboutViewModel : BindableBase
+    public class AboutViewModel : BindableBase
     {
         public string Version
         {

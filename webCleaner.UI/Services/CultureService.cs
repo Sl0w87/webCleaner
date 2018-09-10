@@ -4,16 +4,26 @@ using System.Windows;
 
 namespace webCleaner.Services
 {
-    internal class CultureService
+    public interface ICultureService
     {
-        public static void SetCurrentCulture(CultureInfo culture)
+        void SetCurrentCulture(CultureInfo culture);
+        void LoadCulture();
+    }
+
+    public class CultureService: ICultureService
+    {
+        public CultureService()
+        {
+            LoadCulture();
+        }
+        public void SetCurrentCulture(CultureInfo culture)
         {
             Properties.Settings.Default.Culture = culture.ToString();
             Properties.Settings.Default.Save();
             LoadCulture();
         }
 
-        public static void LoadCulture()
+        public void LoadCulture()
         {
             var culture = Properties.Settings.Default.Culture;
             ResourceDictionary dict = new ResourceDictionary();

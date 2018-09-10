@@ -17,7 +17,6 @@ namespace webCleaner.UI
         public MainWindow()
         {
             InitializeComponent();
-            CultureService.LoadCulture();
             Navigation.Navigation.Frame = new Frame() { NavigationUIVisibility = NavigationUIVisibility.Hidden };
             Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
          
