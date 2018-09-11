@@ -49,7 +49,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelDownloadHistory}"
-                                   Style="{StaticResource ToggleSwitchStyle}"/>
+                                   Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding Downloads}"/>
             </StackPanel>
         </StackPanel>
 
@@ -59,15 +60,18 @@
                     Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelFormData}"
-                                       Style="{StaticResource ToggleSwitchStyle}"/>
+                                       Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding FormData}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelHistory}"
-                                       Style="{StaticResource ToggleSwitchStyle}"/>
+                                       Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding History}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <controls:ToggleSwitch Header="{DynamicResource LabelPasswords}"
-                                       Style="{StaticResource ToggleSwitchStyle}"/>
+                                       Style="{StaticResource ToggleSwitchStyle}"
+                                       IsChecked="{Binding Passwords}"/>
             </StackPanel>
         </StackPanel>
     </Grid>

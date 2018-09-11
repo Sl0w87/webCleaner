@@ -16,6 +16,9 @@ namespace webCleaner.Mvvm
             _container.RegisterType<INotifyPropertyChanged, AboutViewModel>();
             _container.RegisterType<INotifyPropertyChanged, CultureViewModel>();
             _container.RegisterType<INotifyPropertyChanged, ChromeConfigurationViewModel>();
+            _container.RegisterType<INotifyPropertyChanged, FirefoxConfigurationViewModel>();
+            _container.RegisterType<INotifyPropertyChanged, IEConfigurationViewModel>();
+            _container.RegisterType<INotifyPropertyChanged, EdgeConfigurationViewModel>();
         }
 
         public AboutViewModel About
@@ -31,6 +34,21 @@ namespace webCleaner.Mvvm
         public ChromeConfigurationViewModel ChromeConfig
         {
             get { return _container.Resolve<ChromeConfigurationViewModel>(); }
+        }
+
+        public FirefoxConfigurationViewModel FirefoxConfig
+        {
+            get { return _container.Resolve<FirefoxConfigurationViewModel>(); }
+        }
+
+        public IEConfigurationViewModel IEConfig
+        {
+            get { return _container.Resolve<IEConfigurationViewModel>(); }
+        }
+
+        public EdgeConfigurationViewModel EdgeConfig
+        {
+            get { return _container.Resolve<EdgeConfigurationViewModel>(); }
         }
     }
 }

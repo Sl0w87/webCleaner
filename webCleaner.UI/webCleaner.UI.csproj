@@ -7,7 +7,7 @@
     <ProjectGuid>{E70C3FCD-B03E-41FA-921A-9E457A0D2024}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>webCleaner</RootNamespace>
-    <AssemblyName>webCleaner.UI</AssemblyName>
+    <AssemblyName>webWasher</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -47,6 +47,9 @@
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.IconPacks.2.3.0\lib\net45\MahApps.Metro.IconPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -96,6 +99,7 @@
     <Compile Include="Controls\CultureUserControl.xaml.cs">
       <DependentUpon>CultureUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\BrowserConfigurationModel.cs" />
     <Compile Include="Models\ConfigurationModel.cs" />
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\DelegateCommand.cs" />
@@ -104,6 +108,9 @@
     <Compile Include="Services\ConfigurationService.cs" />
     <Compile Include="Services\CultureService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\FirefoxConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\EdgeConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\IEConfigurationViewModel.cs" />
     <Compile Include="ViewModels\ChromeConfigurationViewModel.cs" />
     <Compile Include="ViewModels\CultureViewModel.cs" />
     <Compile Include="ViewModels\MenuItem.cs" />

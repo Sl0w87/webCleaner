@@ -5,9 +5,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:userControls="clr-namespace:webCleaner.Controls"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Firefox">
+      mc:Ignorable="d">
 
     <Grid>
         <iconPacks:PackIconFontAwesome Width="48"
@@ -19,7 +17,8 @@
                                     Kind="FirefoxBrands" />
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
                       HorizontalScrollBarVisibility="Auto">
-            <userControls:ConfigUserControl />
+            <userControls:ConfigUserControl 
+                DataContext="{Binding Source={StaticResource Locator}, Path=FirefoxConfig}"/>
         </ScrollViewer>
     </Grid>
 </Page>

@@ -17,9 +17,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
                       HorizontalScrollBarVisibility="Auto">
             <userControls:ConfigUserControl 
-                DataContext="{Binding Source={StaticResource Locator}, Path=ChromeConfig}"
-                IsActive="{Binding IsActive}"
-                Cache="{Binding Cache}"/>
+                DataContext="{Binding Source={StaticResource Locator}, Path=ChromeConfig}"/>
         </ScrollViewer>
     </Grid>
 </Page>

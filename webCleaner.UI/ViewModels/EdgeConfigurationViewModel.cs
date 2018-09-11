@@ -4,12 +4,12 @@ using webCleaner.Services;
 
 namespace webCleaner.ViewModels
 {
-    public class ChromeConfigurationViewModel: BindableBase
+    public class EdgeConfigurationViewModel: BindableBase
     {
         private readonly IConfigurationService _service;
         private ConfigurationModel model;
 
-        public ChromeConfigurationViewModel(IConfigurationService service)
+        public EdgeConfigurationViewModel(IConfigurationService service)
         {
             _service = service;
             model = _service.Load();
@@ -22,70 +22,70 @@ namespace webCleaner.ViewModels
         
         public bool IsActive
         {
-            get { return model.Chrome.Active; }
+            get { return model.Edge.Active; }
             set
             {
-                model.Chrome.Active = value;
+                model.Edge.Active = value;
                 Save();
             }
         }
 
         public bool Cache
         {
-            get { return model.Chrome.Cache; }
+            get { return model.Edge.Cache; }
             set
             {
-                model.Chrome.Cache = value;
+                model.Edge.Cache = value;
                 Save();
             }
         }
 
         public bool Cookies
         {
-            get { return model.Chrome.Cookies; }
+            get { return model.Edge.Cookies; }
             set
             {
-                model.Chrome.Cookies = value;
+                model.Edge.Cookies = value;
                 Save();
             }
         }
 
         public bool Downloads
         {
-            get { return model.Chrome.Downloads; }
+            get { return model.Edge.Downloads; }
             set
             {
-                model.Chrome.Downloads = value;
+                model.Edge.Downloads = value;
                 Save();
             }
         }
 
         public bool FormData
         {
-            get { return model.Chrome.FormData; }
+            get { return model.Edge.FormData; }
             set
             {
-                model.Chrome.FormData = value;
+                model.Edge.FormData = value;
                 Save();
             }
         }
 
         public bool History
         {
-            get { return model.Chrome.History; }
+            get { return model.Edge.History; }
             set
             {
-                model.Chrome.History = value;
+                model.Edge.History = value;
                 Save();
             }
         }
 
         public bool Passwords
         {
-            get { return model.Chrome.Passwords; }
+            get { return model.Edge.Passwords; }
             set
             {
-                model.Chrome.Passwords = value;
+                model.Edge.Passwords = value;
                 Save();
             }
         }
