@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webCleaner.Console", "webCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webCleaner.UI", "webCleaner.UI\webCleaner.UI.csproj", "{E70C3FCD-B03E-41FA-921A-9E457A0D2024}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "webCleaner.Setup", "webCleaner.Setup\webCleaner.Setup.vdproj", "{E8AAD522-2245-493D-AD8A-6C034E2745E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,12 @@ Global
 		{E70C3FCD-B03E-41FA-921A-9E457A0D2024}.Release|x64.Build.0 = Release|Any CPU
 		{E70C3FCD-B03E-41FA-921A-9E457A0D2024}.Release|x86.ActiveCfg = Release|Any CPU
 		{E70C3FCD-B03E-41FA-921A-9E457A0D2024}.Release|x86.Build.0 = Release|Any CPU
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Debug|Any CPU.ActiveCfg = Debug
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Debug|x64.ActiveCfg = Debug
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Debug|x86.ActiveCfg = Debug
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Release|Any CPU.ActiveCfg = Release
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Release|x64.ActiveCfg = Release
+		{E8AAD522-2245-493D-AD8A-6C034E2745E6}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
